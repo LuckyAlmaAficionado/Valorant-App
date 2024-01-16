@@ -8,6 +8,7 @@ abstract class Routes {
   static const AGENT = _Paths.AGENT;
   static const DETAIL_AGENT = _Paths.DETAIL_AGENT;
   static const MAPS = _Paths.MAPS;
+  static const DETAIL_MAPS = _Paths.DETAIL_MAPS;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const AGENT = '/agent';
   static const DETAIL_AGENT = '/detail-agent';
   static const MAPS = '/maps';
+  static const DETAIL_MAPS = '/detail-maps';
 }

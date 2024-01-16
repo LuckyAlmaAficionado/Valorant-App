@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import 'app/routes/app_pages.dart';
 
 void main() {
@@ -15,10 +13,7 @@ void main() {
     GetMaterialApp(
       title: "Valorant",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: false,
-        textTheme: GoogleFonts.outfitTextTheme(),
-      ),
+      theme: ThemeData(useMaterial3: false, fontFamily: 'Valorant'),
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

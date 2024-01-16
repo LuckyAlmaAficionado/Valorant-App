@@ -42,14 +42,13 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
                 child: Center(
-                  child: Text(
-                    'Valorant Agent',
-                    style: GoogleFonts.outfit(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      fontSize: 28,
-                    ),
-                  ),
+                  child: Text('Valorant Agent',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Valorant',
+                        color: Colors.white,
+                        fontSize: 30,
+                      )),
                 ),
               ),
             ),
@@ -57,7 +56,7 @@ class DashboardView extends GetView<DashboardController> {
               onTap: () => Get.toNamed(Routes.MAPS),
               child: Container(
                 padding: const EdgeInsets.all(16.0),
-                margin: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
                 width: Get.width,
                 height: Get.height * 0.24,
                 decoration: BoxDecoration(
@@ -76,14 +75,13 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
                 child: Center(
-                  child: Text(
-                    'Valorant Maps',
-                    style: GoogleFonts.outfit(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      fontSize: 28,
-                    ),
-                  ),
+                  child: Text('Valorant Maps',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Valorant',
+                        color: Colors.white,
+                        fontSize: 30,
+                      )),
                 ),
               ),
             )

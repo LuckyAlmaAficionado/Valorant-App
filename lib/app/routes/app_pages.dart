@@ -6,6 +6,8 @@ import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/detail_agent/bindings/detail_agent_binding.dart';
 import '../modules/detail_agent/views/detail_agent_view.dart';
+import '../modules/detail_maps/bindings/detail_maps_binding.dart';
+import '../modules/detail_maps/views/detail_maps_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/maps/bindings/maps_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.MAPS,
       page: () => const MapsView(),
       binding: MapsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_MAPS,
+      page: () => const DetailMapsView(),
+      binding: DetailMapsBinding(),
     ),
   ];
 }

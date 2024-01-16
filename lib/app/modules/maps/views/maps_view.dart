@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:valorant/app/constant/color.dart';
-import 'package:valorant/app/models/agents.dart';
 import 'package:valorant/app/models/maps.dart';
+import 'package:valorant/app/routes/app_pages.dart';
 
 import '../controllers/maps_controller.dart';
 
@@ -14,9 +14,10 @@ class MapsView extends GetView<MapsController> {
   Widget build(BuildContext context) {
     Get.put(MapsController());
     return Scaffold(
+      backgroundColor: Colors.black12,
       appBar: AppBar(
         title: Text('Valorant Maps'),
-        backgroundColor: primaryColor,
+        backgroundColor: Colors.black12,
       ),
       body: Container(
         width: Get.width,
@@ -28,25 +29,35 @@ class MapsView extends GetView<MapsController> {
               padding: const EdgeInsets.all(16.0),
               itemBuilder: (context, index) {
                 ValorantMaps map = controller.valorantMaps[index];
-                return Container(
-                  margin: const EdgeInsets.only(bottom: 16),
-                  height: Get.height * 0.25,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          map.premierBackgroundImage,
+                return GestureDetector(
+                  onTap: () => Get.toNamed(Routes.DETAIL_MAPS, arguments: map),
+                  child: Container(
+                    margin: const EdgeInsets.only(bottom: 25),
+                    height: Get.height * 0.25,
+                    width: Get.width,
+                    padding: const EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage(map.splash),
+                        )),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(map.displayName.toUpperCase(),
+                            style: GoogleFonts.outfit(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                              fontSize: 35,
+                            )),
+                        Text(
+                          map.coordinates,
+                          style: GoogleFonts.outfit(
+                            color: Colors.white,
+                            fontSize: 9,
+                          ),
                         ),
-                      )),
-                  child: Center(
-                    child: Text(
-                      map.displayName.toUpperCase(),
-                      style: GoogleFonts.outfit(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
-                        fontSize: 20,
-                      ),
+                      ],
                     ),
                   ),
                 );

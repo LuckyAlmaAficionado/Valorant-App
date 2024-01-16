@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:valorant/app/widgets/custom_navbar.dart';
 
 import '../controllers/detail_agent_controller.dart';
 
@@ -13,12 +12,26 @@ class DetailAgentView extends GetView<DetailAgentController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black12,
+      appBar: AppBar(
+        title: Text('The Agents'),
+        backgroundColor:
+            HexColor(controller.detailAgent.backgroundGradientColors[0]),
+        centerTitle: true,
+        actions: [
+          Icon(
+            Icons.widgets,
+            color: HexColor('#FFFBF5'),
+          ),
+          const Gap(10),
+        ],
+      ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: NetworkImage(controller.detailAgent.background!),
             fit: BoxFit.none,
-            opacity: 0.1,
+            opacity: 0.05,
           ),
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -34,25 +47,112 @@ class DetailAgentView extends GetView<DetailAgentController> {
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              CustomNavBar(title: 'Detail Agent', isBack: true),
-              Hero(
-                tag: controller.heroTag.value,
-                child: Image.network(
-                  controller.detailAgent.bustPortrait!,
-                  fit: BoxFit.cover,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress != null)
-                      return Expanded(
-                        child: SizedBox(
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              color: Colors.black,
-                            ),
+              // Image
+              Container(
+                width: Get.width,
+                height: 550,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 60,
+                      left: 25,
+                      child: RotatedBox(
+                        quarterTurns: 1,
+                        child: Text(
+                          controller.detailAgent.displayName.toUpperCase(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white.withOpacity(0.25),
+                            fontSize: 70,
                           ),
                         ),
-                      );
-                    return child;
-                  },
+                      ),
+                    ),
+                    Positioned(
+                      child: Hero(
+                        tag: controller.heroTag.value,
+                        child: Image.network(
+                          controller.detailAgent.bustPortrait!,
+                          fit: BoxFit.cover,
+                          height: 550,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress != null)
+                              return Expanded(
+                                child: SizedBox(
+                                  child: Center(
+                                    child: CircularProgressIndicator(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            return child;
+                          },
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      right: 20,
+                      top: 60,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            controller.detailAgent.displayName.toUpperCase(),
+                            style: TextStyle(
+                              color: HexColor('#FD4556'),
+                              fontSize: 28,
+                            ),
+                          ),
+                          Text(
+                            controller.detailAgent.role!.displayName.name,
+                            style: TextStyle(
+                              color: HexColor('#FFFBF5'),
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Gap(10),
+                          Container(
+                            height: 5,
+                            width: 60,
+                            color: Colors.white,
+                          ),
+                          const Gap(10),
+                          Container(
+                            width: 60,
+                            child: Column(
+                              children: controller.detailAgent.abilities
+                                  .asMap()
+                                  .entries
+                                  .map((e) => Container(
+                                        height: 60,
+                                        width: 60,
+                                        margin: EdgeInsets.only(bottom: 10),
+                                        padding: const EdgeInsets.all(4),
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            width: 1,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                        child: Image.network(
+                                          e.value.displayIcon!,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Icon(
+                                            Icons.error_outline,
+                                            size: 50,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ))
+                                  .toList(),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const Gap(20),
