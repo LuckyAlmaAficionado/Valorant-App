@@ -25,7 +25,7 @@ Akses database komprehensif tentang senjata di Valorant. Pelajari statistik senj
 Untuk memulai dengan Valorant Companion App, ikuti langkah-langkah berikut:
 
 1. **Unduh Aplikasi:**
-   - Kunjungi [ValorantApp!](build/app/outputs/flutter-apk/app-debug.apk) untuk aplikasi saat ini hanya bisa digunakan di platform Android.
+   - Klik disini [ValorantApp!](assets/apps/valorant.apk) untuk aplikasi saat ini hanya bisa digunakan di platform Android.
 
 2. **Instalasi:**
    - Installasi aplikasi seperti biasa aplikasi dijamin aman dan bisa di pertanggung jawabkan tidak ada pengambilan data apapun.
