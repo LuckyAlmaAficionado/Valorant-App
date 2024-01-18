@@ -1,16 +1,40 @@
-# valorant
+# Valorant Companion App Readme
 
-A new Flutter project.
+![Logo Valorant!](assets/images/valorant_logo.png)
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+Selamat datang di Valorant Companion App! Aplikasi ini dirancang sebagai teman sejati bagi para pemain Valorant, menyediakan informasi penting mengenai hero, peta, dan senjata di dalam game. Baik Anda pemula atau pemain berpengalaman, aplikasi ini dibuat untuk meningkatkan pengalaman Anda dalam bermain Valorant dengan memberikan akses cepat ke berbagai informasi yang sangat berguna.
 
-A few resources to get you started if this is your first Flutter project:
+## Fitur
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 1. Informasi Hero
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Jelajahi rincian tentang setiap hero di Valorant, termasuk kemampuan, peran dalam tim, dan kisah latar belakang. Tetap terupdate dengan rilis hero terbaru dan perubahan patch.
+
+### 2. Panduan Peta
+
+Dapatkan informasi mendalam tentang semua peta di Valorant. Pahami lokasi kunci, panggilan, dan titik strategis untuk meningkatkan permainan Anda. Tetap unggul dalam permainan dengan panduan peta yang terperinci.
+
+### 3. Database Senjata
+
+Akses database komprehensif tentang senjata di Valorant. Pelajari statistik senjata, pola recoil, dan situasi penggunaan yang direkomendasikan. Buat keputusan yang tepat tentang senjata mana yang paling sesuai dengan gaya bermain Anda.
+
+## Instalasi
+
+Untuk memulai dengan Valorant Companion App, ikuti langkah-langkah berikut:
+
+1. **Unduh Aplikasi:**
+   - Kunjungi [ValorantApp!](build/app/outputs/flutter-apk/app-debug.apk) untuk aplikasi saat ini hanya bisa digunakan di platform Android.
+
+2. **Instalasi:**
+   - Installasi aplikasi seperti biasa aplikasi dijamin aman dan bisa di pertanggung jawabkan tidak ada pengambilan data apapun.
+
+3. **Buka Aplikasi:**
+   - Buka Valorant Companion App dan temukan berbagai informasi menarik seputar Valorant.
+
+## Dukungan dan Umpan Balik
+
+Jika Anda mengalami masalah atau memiliki umpan balik, silakan hubungi saya dukungan saya di luckyrigel9802@gmail.com. Kami berkomitmen untuk memberikan pengalaman terbaik bagi para pemain Valorant.
+
+Terima kasih telah memilih Valorant Companion App. Selamat bermain!
