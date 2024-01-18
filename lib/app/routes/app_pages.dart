@@ -8,10 +8,14 @@ import '../modules/detail_agent/bindings/detail_agent_binding.dart';
 import '../modules/detail_agent/views/detail_agent_view.dart';
 import '../modules/detail_maps/bindings/detail_maps_binding.dart';
 import '../modules/detail_maps/views/detail_maps_view.dart';
+import '../modules/detail_weapon/bindings/detail_weapon_binding.dart';
+import '../modules/detail_weapon/views/detail_weapon_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/maps/bindings/maps_binding.dart';
 import '../modules/maps/views/maps_view.dart';
+import '../modules/weapons/bindings/weapons_binding.dart';
+import '../modules/weapons/views/weapons_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +54,16 @@ class AppPages {
       name: _Paths.DETAIL_MAPS,
       page: () => const DetailMapsView(),
       binding: DetailMapsBinding(),
+    ),
+    GetPage(
+      name: _Paths.WEAPONS,
+      page: () => const WeaponsView(),
+      binding: WeaponsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_WEAPON,
+      page: () => const DetailWeaponView(),
+      binding: DetailWeaponBinding(),
     ),
   ];
 }

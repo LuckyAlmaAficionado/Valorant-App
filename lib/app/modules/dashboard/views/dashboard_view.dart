@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +43,7 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
                 child: Center(
-                  child: Text('Valorant Agent',
+                  child: Text(' Agent',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Valorant',
@@ -75,7 +76,41 @@ class DashboardView extends GetView<DashboardController> {
                   ),
                 ),
                 child: Center(
-                  child: Text('Valorant Maps',
+                  child: Text('Maps',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Valorant',
+                        color: Colors.white,
+                        fontSize: 30,
+                      )),
+                ),
+              ),
+            ),
+            const Gap(16.0),
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.WEAPONS),
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
+                margin: const EdgeInsets.symmetric(horizontal: 16.0),
+                width: Get.width,
+                height: Get.height * 0.24,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(width: 1, color: Colors.black54),
+                  gradient: LinearGradient(colors: [
+                    primaryColor,
+                    secondaryColor,
+                  ]),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/images/valorant_weapons.jpg',
+                    ),
+                    opacity: 200,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Center(
+                  child: Text('Weapons',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Valorant',

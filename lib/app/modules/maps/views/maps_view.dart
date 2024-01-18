@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:valorant/app/constant/color.dart';
 import 'package:valorant/app/models/maps.dart';
 import 'package:valorant/app/routes/app_pages.dart';
 

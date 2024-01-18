@@ -13,6 +13,7 @@ dependencies:
   get: ^4.6.6
   google_fonts: ^6.1.0
   hexcolor: ^3.0.1
+  sliding_up_panel:
   http: null
 
 dev_dependencies:
