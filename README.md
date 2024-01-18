@@ -1,4 +1,4 @@
-# Valorant Companion App Readme
+# Valorant App Readme
 
 ![Logo Valorant!](assets/images/valorant_logo.png)
 
