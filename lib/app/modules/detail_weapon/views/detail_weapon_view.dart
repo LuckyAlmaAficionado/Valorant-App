@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:valorant/app/models/weapons.dart';
+import 'package:valorant/app/routes/app_pages.dart';
 
 import '../controllers/detail_weapon_controller.dart';
 
@@ -91,31 +92,45 @@ class DetailWeaponView extends GetView<DetailWeaponController> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: LayoutBuilder(
-                          builder: (context, constraints) => Column(
-                            children: [
-                              (skin.displayIcon != null)
-                                  ? Container(
-                                      padding: const EdgeInsets.all(10),
-                                      height: constraints.maxHeight,
-                                      child: Image.network(
-                                        skin.displayIcon!,
-                                        errorBuilder:
-                                            (context, error, stackTrace) =>
-                                                Icon(Icons.error_outline),
-                                      ),
+                          builder: (context, constraints) => GestureDetector(
+                            onTap: () {
+                              (skin.levels[0].streamedVideo == null)
+                                  ? Get.snackbar(
+                                      'Video Not Available',
+                                      "Sorry video not available!",
                                     )
-                                  : SizedBox(
-                                      height: constraints.maxHeight,
-                                      child: Center(
-                                        child: Text(
-                                          'Tidak Ada Gambar',
-                                          style: TextStyle(
-                                            color: Colors.white,
+                                  : Get.toNamed(
+                                      Routes.VIDEO,
+                                      arguments: skin.levels[0].streamedVideo,
+                                      preventDuplicates: false,
+                                    );
+                            },
+                            child: Column(
+                              children: [
+                                (skin.displayIcon != null)
+                                    ? Container(
+                                        padding: const EdgeInsets.all(10),
+                                        height: constraints.maxHeight,
+                                        child: Image.network(
+                                          skin.displayIcon!,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                                  Icon(Icons.error_outline),
+                                        ),
+                                      )
+                                    : SizedBox(
+                                        height: constraints.maxHeight,
+                                        child: Center(
+                                          child: Text(
+                                            'Tidak Ada Gambar',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       );

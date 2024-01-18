@@ -14,6 +14,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/maps/bindings/maps_binding.dart';
 import '../modules/maps/views/maps_view.dart';
+import '../modules/video/bindings/video_binding.dart';
+import '../modules/video/views/video_view.dart';
 import '../modules/weapons/bindings/weapons_binding.dart';
 import '../modules/weapons/views/weapons_view.dart';
 
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.DETAIL_WEAPON,
       page: () => const DetailWeaponView(),
       binding: DetailWeaponBinding(),
+    ),
+    GetPage(
+      name: _Paths.VIDEO,
+      page: () => const VideoView(),
+      binding: VideoBinding(),
     ),
   ];
 }

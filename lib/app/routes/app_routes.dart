@@ -11,6 +11,7 @@ abstract class Routes {
   static const DETAIL_MAPS = _Paths.DETAIL_MAPS;
   static const WEAPONS = _Paths.WEAPONS;
   static const DETAIL_WEAPON = _Paths.DETAIL_WEAPON;
+  static const VIDEO = _Paths.VIDEO;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const DETAIL_MAPS = '/detail-maps';
   static const WEAPONS = '/weapons';
   static const DETAIL_WEAPON = '/detail-weapon';
+  static const VIDEO = '/video';
 }

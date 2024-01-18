@@ -12,7 +12,6 @@ class WeaponsController extends GetxController {
           .get(Uri.parse('https://valorant-api.com/v1/weapons?language=id-ID'));
 
       var data = json.decode(response.body);
-      print(data);
       if (data['status'] == 200) {
         weapons = (data['data'] as List)
             .map((e) => ValorantWeapon.fromJson(e))
