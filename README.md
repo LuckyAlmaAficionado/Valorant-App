@@ -6,6 +6,12 @@
 
 Selamat datang di Valorant Companion App! Aplikasi ini dirancang sebagai teman sejati bagi para pemain Valorant, menyediakan informasi penting mengenai hero, peta, dan senjata di dalam game. Baik Anda pemula atau pemain berpengalaman, aplikasi ini dibuat untuk meningkatkan pengalaman Anda dalam bermain Valorant dengan memberikan akses cepat ke berbagai informasi yang sangat berguna.
 
+## Screenshot
+
+ - ![Screenshot1!](assets/screenshot/display_1.png)
+
+ - ![Screenshot1!](assets/screenshot/display_2.png)
+
 ## Fitur
 
 ### 1. Informasi Hero
