@@ -14,12 +14,29 @@ class DashboardView extends GetView<DashboardController> {
   Widget build(BuildContext context) {
     Get.put(DashboardController());
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        title: Text(
+          'Valorant dashboard',
+          style: GoogleFonts.outfit(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+          ),
+        ),
+        actions: [
+          Icon(
+            Icons.notifications,
+            color: Colors.white,
+          ),
+          const Gap(10),
+        ],
+      ),
       body: SizedBox(
         width: Get.width,
         height: Get.height,
         child: Column(
           children: [
-            NavBarDashboard(),
             GestureDetector(
               onTap: () => Get.toNamed(Routes.AGENT),
               child: Container(

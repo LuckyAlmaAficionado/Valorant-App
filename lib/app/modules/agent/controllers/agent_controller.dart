@@ -25,41 +25,29 @@ class AgentController extends GetxController {
   }
 
   fetchDataValorantAgents() async {
+    // agar tidak terjadi kebocoran data
+    listValorantAgent.clear();
+
     Uri url = Uri.parse('https://valorant-api.com/v1/agents?language=id-ID');
     try {
       var response = await http.get(url);
       var data = ResponseValorantAPI.fromJson(json.decode(response.body));
 
+      print('data status: ${data.status}');
+
       // check status
       if (data.status == 200) {
-        data.data.forEach((element) {
-          // karena uuid pada hero tersebut ada null sehingga menyebabkan error
-          if (element.uuid == "ded3520f-4264-bfed-162d-b080e2abccf9") return;
-          listValorantAgent.add(element);
-        });
+        listValorantAgent.addAll(data.data);
 
-        print('fetch data successfully');
+        listValorantAgent.removeWhere((element) =>
+            element.uuid == "ded3520f-4264-bfed-162d-b080e2abccf9");
+
+        return listValorantAgent;
       } else {
         throw ('error fetching valorant agent');
       }
     } catch (error) {
       throw ('error $error');
     }
-  }
-
-  @override
-  void onInit() {
-    super.onInit();
-    fetchDataValorantAgents();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 }

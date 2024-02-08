@@ -96,8 +96,19 @@ class DetailWeaponView extends GetView<DetailWeaponController> {
                             onTap: () {
                               (skin.levels[0].streamedVideo == null)
                                   ? Get.snackbar(
-                                      'Video Not Available',
-                                      "Sorry video not available!",
+                                      '',
+                                      "",
+                                      titleText: Text(
+                                        'Video Not Available',
+                                        style: GoogleFonts.outfit(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      messageText: Text(
+                                        'Sorry video not available!',
+                                        style: GoogleFonts.outfit(),
+                                      ),
                                     )
                                   : Get.toNamed(
                                       Routes.VIDEO,
